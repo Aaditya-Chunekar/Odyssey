@@ -1,4 +1,4 @@
-# 🌍 TerraVoice — Multilingual 3D Travel Guide
+# 🌍 Odyssey — Multilingual 3D Travel Guide
 
 > Type any destination → fly over real 3D terrain → hear it narrated in any language.
 
@@ -24,8 +24,8 @@
 ### 1. Clone & set up
 
 ```bash
-git clone https://github.com/Aaditya-Chunekar/terravoice
-cd terravoice
+git clone https://github.com/Aaditya-Chunekar/odyssey
+cd odyssey
 
 cp .env.example .env
 # Edit .env and add your GEMINI_API_KEY
@@ -60,7 +60,7 @@ Open **http://localhost:3000** and start exploring.
 ## 🏗️ Project Structure
 
 ```
-terravoice/
+odyssey/
 ├── backend/
 │   ├── main.py          # FastAPI routes (resolve, terrain, narration, WS voice)
 │   └── terrain.py       # AWS Terrain Tile fetching + Terrarium decoder

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TerraVoice — run.py entry point."""
+"""Odyssey — run.py entry point."""
 import uvicorn
 
 if __name__ == "__main__":

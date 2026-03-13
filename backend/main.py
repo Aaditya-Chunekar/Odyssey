@@ -19,7 +19,7 @@ load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 genai.configure(api_key=GEMINI_API_KEY)
 
-app = FastAPI(title="TerraVoice API")
+app = FastAPI(title="Odyssey API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -189,7 +189,7 @@ async def voice_guide_ws(websocket: WebSocket):
 
             if msg["type"] == "context":
                 context = msg
-                system = f"""You are TerraVoice — a warm, knowledgeable, multilingual travel guide AI.
+                system = f"""You are Odyssey — a warm, knowledgeable, multilingual travel guide AI.
 The traveler is doing a 3D flyover of {context.get('destination', 'an unknown destination')}.
 Speak in {context.get('language', 'English')}. Be concise (2-3 sentences), vivid, and engaging.
 If the traveler asks in a different language, detect it and respond in that language.
