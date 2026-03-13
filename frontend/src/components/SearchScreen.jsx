@@ -67,7 +67,13 @@ export default function SearchScreen() {
             <path d="M6 16 Q10 8 16 16 Q22 24 26 16" stroke="#c8902a" strokeWidth="1.5" fill="none"/>
             <circle cx="16" cy="16" r="2" fill="#c8902a"/>
           </svg>
-          <span style={styles.logoText}>TERRA<span style={{color:'#c8902a'}}>VOICE</span></span>
+          <span style={{
+  ...styles.logoText,
+  background: 'linear-gradient(90deg, #ffffff 0%, #c8902a 100%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  backgroundClip: 'text',
+}}>ODYSSEY</span>
         </div>
         <p style={styles.tagline}>Fly over the world. Hear its stories.</p>
       </div>
