@@ -1,0 +1,11 @@
+.env
+todo.md
+brainstorming.md
+cache/
+# frontend
+frontend/node_modules/
+frontend/npm-debug.*
+frontend/yarn-debug.*
+frontend/yarn-error.*
+# backend
+backend/__pycache__/
