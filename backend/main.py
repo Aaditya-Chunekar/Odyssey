@@ -134,7 +134,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], allow_methods=["*"], allow_headers=["*"],
 )
-
+# cache saves time if revisiting any previosuly visited destination
 CACHE_DIR = Path("./cache")
 CACHE_DIR.mkdir(exist_ok=True)
 
@@ -155,7 +155,6 @@ class NarrationRequest(BaseModel):
     position: Optional[dict] = None
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
-
 def cache_key(destination: str) -> str:
     return hashlib.md5(destination.lower().strip().encode()).hexdigest()[:12]
 
