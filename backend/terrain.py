@@ -3,7 +3,6 @@ terrain.py — AWS Terrain Tiles (Terrarium encoding) fetcher & processor.
 Tiles use Terrarium RGB encoding: elevation = (R * 256 + G + B/256) - 32768
 """
 
-import os
 import math
 import asyncio
 import httpx
