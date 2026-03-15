@@ -1,12 +1,12 @@
 # Odyssey
 
-> A multilingual 3D travel guide that allows users to fly over real elevation terrain of any destination globally, accompanied by synthesized voice narration in multiple languages.
+> Type any destination → fly over real 3D terrain → hear it narrated in any language.
 
 ## Features
 
 | Feature | Description |
 |---|---|
-| **Destination Search** | Resolves user input into geographic bounds and metadata using Gemini 2.0 Flash. |
+| **Destination Search** | Resolves user input into geographic bounds and metadata using Gemini 2.5 Flash. |
 | **Real Elevation** | Decodes AWS Terrain Tiles (Terrarium encoding) into an accurate 3D mesh. |
 | **Hypsometric Coloring** | Automatically colors terrain based on elevation profiles (valleys to snow peaks). |
 | **Free-flight Mode** | Fluid WASD controls to navigate and soar freely over the environment. |
@@ -113,7 +113,7 @@ flowchart TB
     end
     
     subgraph External[External APIs]
-        Gemini[Google Gemini 2.0 Flash]
+        Gemini[Google Gemini 2.5 Flash]
         AWS[AWS Terrain Tiles]
     end
     
@@ -136,9 +136,9 @@ flowchart TB
 
 ### Logic Flow
 
-1. **Resolution Interface:** The user inputs a location (e.g., "Patagonia, Argentina"). The backend calls Gemini 2.0 Flash to resolve geographic bounding boxes, contextual facts, and location descriptions. This metadata is stored locally in the `cache/` directory.
+1. **Resolution Interface:** The user inputs a location (e.g., "Patagonia, Argentina"). The backend calls Gemini 2.5 Flash to resolve geographic bounding boxes, contextual facts, and location descriptions. This metadata is stored locally in the `cache/` directory.
 2. **Terrain Generation:** Bounding box coordinates are translated into spatial tile coordinates. The backend fetches RGB-encoded PNGs from AWS S3 (Terrarium format), which are decoded into a heightmap elevation grid to dynamically reconstruct a 3D mesh within React Three Fiber.
-3. **Narration Synthesis:** Gemini 2.0 Flash dynamically generates localized, semantic descriptions of the terrain, and passes this string back to the client application to be spoken aloud using the native browser Web Speech API.
+3. **Narration Synthesis:** Gemini 2.5 Flash dynamically generates localized, semantic descriptions of the terrain, and passes this string back to the client application to be spoken aloud using the native browser Web Speech API.
 4. **Live Interaction:** A stateful WebSocket connection maintains chat history, enabling a seamless conversational interface regarding the destination environment.
 
 ## Supported Languages
@@ -149,7 +149,7 @@ English, Spanish, French, German, Italian, Portuguese, Japanese, Chinese (Mandar
 
 - **Frontend:** React 18, Vite, Three.js (@react-three/fiber), Zustand
 - **Backend:** Python, FastAPI
-- **AI Models:** Google Gemini 2.0 Flash
+- **AI Models:** Google Gemini 2.5 Flash
 - **Elevation Data:** AWS Terrain Tiles (Terrarium RGB mapping)
 - **Audio & Input:** Web Speech API, Web Speech Recognition API
 
