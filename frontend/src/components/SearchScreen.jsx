@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useStore } from '../store'
-import { resolveDestination, fetchTerrain, getLanguages } from '../utils/api'
+import { resolveDestination, fetchTerrain, fetchSatellite, getLanguages } from '../utils/api'
 
 const SUGGESTIONS = [
   'Mount Fuji, Japan',
@@ -31,7 +31,7 @@ function deleteFromHistory(dest) {
 
 export default function SearchScreen() {
   const { setPhase, setDestination, setDestData, setTerrainData, setLanguage,
-          language, setLoadingStep, setError, error } = useStore()
+          setSatelliteImage, language, setLoadingStep, setError, error } = useStore()
 
   const [input, setInput]               = useState('')
   const [langs, setLangs]               = useState(['English'])
@@ -261,8 +261,8 @@ const styles = {
     justifyContent: 'center', marginBottom: '0.5rem',
   },
   logoText: {
-    fontFamily: 'Cinzel, serif', fontSize: '2rem',
-    fontWeight: 900, letterSpacing: '0.15em', color: '#f5ede0',
+    fontFamily: 'Playfair Display, serif', fontSize: '2rem',
+    fontWeight: 900,  letterSpacing: '0.15em', color: '#f5ede0',
   },
   tagline: {
     fontFamily: 'Crimson Pro, serif', fontSize: '1.1rem',
