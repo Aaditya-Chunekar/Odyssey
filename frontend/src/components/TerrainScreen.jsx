@@ -142,7 +142,7 @@ const styles = {
   topBar: {
     position: 'absolute', top: 0, left: 0, right: 320,
     height: 52,
-    background: 'linear-gradient(to bottom, rgba(13,11,8,0.95), transparent)',
+    // background: 'linear-gradient(to bottom, rgba(13,11,8,0.95), transparent)',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     padding: '0 1.25rem',
     zIndex: 10,
@@ -150,7 +150,7 @@ const styles = {
   },
   backBtn: {
     fontFamily: 'Cinzel, serif', fontSize: '0.6rem',
-    letterSpacing: '0.2em', color: '#7a6a58',
+    letterSpacing: '0.2em', color: '#c8b090',
     background: 'transparent', border: 'none',
     cursor: 'pointer', padding: '0.25rem 0',
   },
@@ -159,7 +159,7 @@ const styles = {
   },
   destLabel: {
     fontFamily: 'Cinzel, serif', fontSize: '0.55rem',
-    letterSpacing: '0.25em', color: '#6a5038',
+    letterSpacing: '0.25em', color: '#c8b090',fontWeight: 400,
   },
   destTitle: {
     fontFamily: 'Cinzel, serif', fontSize: '0.85rem',
@@ -168,7 +168,7 @@ const styles = {
   topRight: { display: 'flex', gap: '0.5rem' },
   hudBtn: {
     fontFamily: 'Cinzel, serif', fontSize: '0.6rem',
-    letterSpacing: '0.12em', color: '#7a6a58',
+    letterSpacing: '0.12em', color: '#c8b090',
     background: 'rgba(13,11,8,0.7)',
     border: '1px solid rgba(200,144,42,0.2)',
     borderRadius: '1px', padding: '0.35rem 0.75rem',
