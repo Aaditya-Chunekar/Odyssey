@@ -153,7 +153,7 @@ English, Spanish, French, German, Italian, Portuguese, Japanese, Chinese (Mandar
 - **Elevation Data:** AWS Terrain Tiles (Terrarium RGB mapping)
 - **Audio & Input:** Web Speech API, Web Speech Recognition API
 
-## Notable Design Decisions
+## Key Design Decisions
 
 - **Cache-first Optimization:** To significantly reduce API overhead and redundant requests, all geographic and AI resolution payloads are synchronously written to `./cache/` utilizing unique hash identifiers. Consecutive queries immediately load the saved schema instead of triggering external requests.
 - **Browser-native Capabilities:** To fully minimize architectural costs, audio processing strictly utilizes the native Web Speech API built into Chromium and equivalent modern browser engines, avoiding secondary vendor-lock.
